@@ -20,7 +20,7 @@ function getInstagramFeed() {
         userIconContainer.classList.add('user-icon-container');
 
         const userIcon = document.createElement('img');
-        userIcon.src = `/img/658368logo uden tagline.png`;
+        userIcon.src = `/img/658368logo uden tagline.webp`;
         userIcon.alt = `@${post.username}`;
         userIcon.classList.add('user-icon');
 
@@ -50,7 +50,7 @@ function getInstagramFeed() {
         userIconContainer1.classList.add('symbol-container');
 
         const userIcon1 = document.createElement('img');
-        userIcon1.src = `/img/instagram-likes.png`;
+        userIcon1.src = `/img/instagram-likes.webp`;
         userIcon1.classList.add('symbol-icon');
 
       
