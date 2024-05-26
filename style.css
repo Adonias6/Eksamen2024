@@ -67,7 +67,6 @@ padding: 20px 50px;
     align-items: end;
     width: 100%;
     height: 74vh;
-    background-image: url(/img/DSC_0038.jpg);
    background-position: center;
    background-size: cover;
     padding: 0px 0px;
@@ -239,22 +238,24 @@ padding: 10px 20px;
   height: 50px;
   width: 50px;
   cursor: pointer;
-  font-size: 1.25rem;
+  font-size: 25px;
   position: absolute;
   text-align: center;
   line-height: 50px;
   border-radius: 50%;
   transform: translateY(-50%);
   transition: transform 0.1s linear;
+  color: white;
+  background-color: #050505;
 }
 .wrapper i:active{
   transform: translateY(-50%) scale(0.85);
 }
 .wrapper i:first-child{
-  left: -52px;
+  left: -50px;
 }
 .wrapper i:last-child{
-  right: -52px;
+  right: 5px;
 }
 .wrapper .carousel{
   display: grid;
@@ -335,7 +336,6 @@ font-style: italic;
   justify-content: start;
   align-items: end;
   height: 350px;
-  width: 100%;
   font-size: 30px;
   padding: 20px 20px;
   color: var(--main-white);
@@ -460,7 +460,7 @@ padding: 0;
     height: 40px;
     z-index: 20;
     position: absolute;
-    top: 35px;
+    top: 28px;
     right: 25px;
   }
 
@@ -547,6 +547,15 @@ padding: 0;
   .inspiration-content2{
    flex-direction: column;
    gap: 10px;
+  }
+  .inspiration-card a {
+    font-size: 23px;
+  }
+  .wrapper i:first-child{
+    left: -50px;
+  }
+  .wrapper i:last-child{
+    right: -50px;
   }
 }
 @media (max-width: 1280px) {
