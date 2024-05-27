@@ -20,7 +20,7 @@ function getInstagramFeed() {
         userIconContainer.classList.add('user-icon-container');
 
         const userIcon = document.createElement('img');
-        userIcon.src = `/img/658368logo uden tagline.webp`;
+        userIcon.src = `img/Standard Logo.png`;
         userIcon.alt = `@${post.username}`;
         userIcon.classList.add('user-icon');
 
