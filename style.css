@@ -163,6 +163,7 @@ h2 {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    border-radius: 5px;
   }
   
   .flip-card-front {
@@ -345,6 +346,7 @@ font-style: italic;
   text-shadow: 0px 1px 5px #424242;
   background-position: center;
   box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+  border-radius: 5px;
 }
 .side-info{
   display: flex;
@@ -388,6 +390,7 @@ margin-bottom: 20px;
  }
  video{
   border: none;
+  border-radius: 5px;
  }
     footer{
         padding: 20PX 50px;
