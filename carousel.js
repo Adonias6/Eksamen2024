@@ -3,17 +3,19 @@ const carousel = document.querySelector(".carousel");
 const firstCardWidth = carousel.querySelector(".card").offsetWidth;
 const arrowBtns = document.querySelectorAll(".wrapper i");
 const carouselChildrens = [...carousel.children];
+// Disse er til at link dine HTML classes med en const "Variable"
+
 
 let isDragging = false,
   isAutoPlay = true,
   startX,
   startScrollLeft,
   timeoutId;
+// Tilader at hive i carouselen :D
 
-// Get the number of cards that can fit in the carousel at once
 let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+// Udregner hvad størrelse card skal have baseret på den først Card width imod offsetwidth
 
-// Insert copies of the last few cards to beginning of carousel for infinite scrolling
 carouselChildrens
   .slice(-cardPerView)
   .reverse()
@@ -21,35 +23,37 @@ carouselChildrens
     carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
   });
 
-// Insert copies of the first few cards to end of carousel for infinite scrolling
+
 carouselChildrens.slice(0, cardPerView).forEach((card) => {
   carousel.insertAdjacentHTML("beforeend", card.outerHTML);
 });
 
-// Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+// Arary slice, fortæller hvordan de her cards skal hives ud af deres Array og display i HTML
+
 carousel.classList.add("no-transition");
 carousel.scrollLeft = carousel.offsetWidth;
 carousel.classList.remove("no-transition");
+// Adds and removes the class no-transition
 
-// Add event listeners for the arrow buttons to scroll the carousel left and right
+
 arrowBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     carousel.scrollLeft +=
       btn.id == "left" ? -firstCardWidth : firstCardWidth;
   });
 });
+// Som i kan se fra før lavet vi VAR scrollleft den bruges nu til at "køre" carouselen ved hjælp af en eventlistner og card width
 
 const dragStart = (e) => {
   isDragging = true;
   carousel.classList.add("dragging");
-  // Records the initial cursor and scroll position of the carousel
+
   startX = e.pageX;
   startScrollLeft = carousel.scrollLeft;
 };
 
 const dragging = (e) => {
-  if (!isDragging) return; // if isDragging is false return from here
-  // Updates the scroll position of the carousel based on the cursor movement
+  if (!isDragging) return; 
   carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
 };
 
@@ -65,3 +69,4 @@ carousel.addEventListener("scroll", infiniteScroll);
 wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
 
+// Tilader at hive i carouselen :D

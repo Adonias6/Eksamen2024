@@ -1,5 +1,6 @@
 
 const accessToken = 'Token';
+// Instagram API token hentes fra Facebook for develepors
 
 function getInstagramFeed() {
   fetch(`https://graph.instagram.com/v12.0/me/media?fields=id,caption,media_type,media_url,permalink,timestamp,username&access_token=${accessToken}`)
@@ -9,13 +10,14 @@ function getInstagramFeed() {
 
       const posts = data.data;
       const paginatedPosts = Array.from(posts).slice(0, 12);
+// Henter data baseret på det link du indsætter og smider det i et Array. vi slicer det her array i 12 altså vi vil have 12 instagram post diplayed
+
 
       paginatedPosts.forEach(post => {
         const postLink = document.createElement('a');
         postLink.href = post.permalink;
         postLink.target = '_blank';
 
-  
         const userIconContainer = document.createElement('div');
         userIconContainer.classList.add('user-icon-container');
 
@@ -66,9 +68,14 @@ function getInstagramFeed() {
 
         postLink.appendChild(postInfo);
         feedContainer.appendChild(postLink);
+
+        // Alt hvad de her gør er at hente HTML elementer og gemme dem i en VAR og derefter post dem i elementer vi skaber her i JS, fx ligesom i den først hvor vi skaber en DIV, og giver den VAR userIconContainer og derefter skaber et img vi så poster i den her skabte DIV
+// Der bliver brugt alt fra skabe DIV, til at skabe Classes, h3 osv osv.
       });
     })
+
     .catch(error => console.error(error));
+    // Error handler
 }
 
 getInstagramFeed();

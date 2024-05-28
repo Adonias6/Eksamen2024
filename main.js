@@ -1,11 +1,13 @@
 const hamburgerCard = document.querySelector(".hamburger-card");
 const hamburgerIcon = document.querySelector(".hamburger");
+// Henter html elementer og gemmer dem i var
+
 
 hamburgerIcon.addEventListener("click", function () {
   hamburgerCard.classList.toggle("open");
 });
+// Åbner hamburger når "Clicked" er aktiv
 
-// Close menu when clicking outside
 window.addEventListener("click", function (event) {
   if (
     !event.target.closest(".hamburger-card") &&
@@ -14,6 +16,8 @@ window.addEventListener("click", function (event) {
     hamburgerCard.classList.remove("open");
   }
 });
+// Lukker hamburger når enden trykket igen eller udenfor elementet
+
 
 document.addEventListener("touchstart", function() {}, true);
-// Call the function to fetch and display the Instagram feed
+// Tilhøre ikke hamburger, dette er for at Hover fungere på mobile view. Hover funktion fungere kun på web men med den her virker det også på mobil
