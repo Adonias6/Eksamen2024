@@ -564,6 +564,9 @@ padding: 0;
   .wrapper i:last-child{
     right: -50px;
   }
+  .hero{
+    height: 55vh;
+}
 }
 @media (max-width: 1280px) {
   #instagram-feed a {

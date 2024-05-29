@@ -53,8 +53,9 @@ function getInstagramFeed() {
 
         const userIcon1 = document.createElement('img');
         userIcon1.src = `/img/instagram-likes.webp`;
+        userIcon1.alt = `@${post.username}`;
         userIcon1.classList.add('symbol-icon');
-
+   
       
         userIconContainer1.appendChild(userIcon1);
         postLink.appendChild(userIconContainer1);
